@@ -1,0 +1,27 @@
+{% load dajaxice_templatetags %}
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{% static '/dajax/jquery.dajax.core.js' %}"></script>
+    <!-- Dajaxice -->
+    <script src="/static/dajaxice/dajaxice.core.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <title>Django CRUD Application</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    
+    <button onclick="Dajaxice.revenda.multiply(12, 20);">Click here!</button>
+    <p>revenda</p>
+    <p valor="", id='result'>ff</p>
+    <p id="result">Algum texto de exemplo</p>
+    <a href="{%url 'ativos'%}"> Lista Ativos</a>
+</body>
+</html>

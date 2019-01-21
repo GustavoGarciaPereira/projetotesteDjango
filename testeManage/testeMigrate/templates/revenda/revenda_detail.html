@@ -1,0 +1,16 @@
+<h1>{{object.nome}} - seminovo</h1>
+
+{%for veiculo in object.veiculos_seminovos%}
+	{{veiculo.nome}}  {{veiculo.ano}} <br>
+	{%empty%}
+		<h3>Ainda não ha veiculos cadastrados</h3>
+{%endfor%}
+
+
+<h1>{{object.nome}} - antigos</h1>
+
+{%for veiculo in object.veiculos_antigos%}
+	{{veiculo.nome}}  {{veiculo.ano}} <br>
+	{%empty%}
+		<h3>Ainda não ha veiculos cadastrados</h3>
+{%endfor%}
