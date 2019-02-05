@@ -1,0 +1,30 @@
+{% block extratitle %}
+	Empresas / 
+{% endblock %}
+
+
+
+{% block content %}
+
+	<div class="table-responsive">
+		<table class="table table-borderless table-sm table-hover">
+	  		<thead class="thead-primary text-white bg-primary">
+	  			<tr>
+	  				<th>Código</th>
+		  			<th>Nome Fantasia</th>
+		  			<th>CNPJ/CPF</th>
+		  		</tr>
+	  		</thead>
+	  		<tbody>
+	  			{% for empresa in object_list %}
+					<tr>
+						<td>{{empresa.first_name}}</td>
+						<td>{{empresa.last_name}}</td>
+						<td>{{empresa.created_date}}</td>
+                    </tr>
+                {% endfor %}
+	  		</tbody>
+		</table>
+    </div>	
+    
+{% endblock %}

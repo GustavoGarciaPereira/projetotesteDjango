@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.utils import timezone
+
 from utils.gerador_hash import gerar_hash
 
 from veiculo.models import Veiculo
@@ -26,3 +28,15 @@ class Revenda(models.Model):
         if not self.id:
             self.slug = gerar_hash()
         super(Revenda, self).save(*args, **kwargs)
+
+
+class Profile(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    created_date = models.DateTimeField(default=timezone.now)
+
+
+class FamilyMember(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=None)
+    name = models.CharField(max_length=100)
+    relationship = models.CharField(max_length=100)
